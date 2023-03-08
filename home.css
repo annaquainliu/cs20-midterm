@@ -79,7 +79,7 @@ h1, p {
 p {
     color: rgb(255, 151, 217);
     font-size: 1.5vw;
-    letter-spacing: 2vw;
+    letter-spacing: 1vw;
 }
 
 h1 {
@@ -88,6 +88,15 @@ h1 {
     margin-top: 20vh;
     font-size: 5vw;
     font-weight: 800;
+    transition-duration: 1s;
+    /* animation-name: colors;
+    animation-duration: 20s;
+    animation-iteration-count: infinite; */
+}
+
+h1:hover {
+    font-size: 6vw;
+     color:rgb(230, 64, 255);
 }
 
 @keyframes slide {
@@ -102,5 +111,23 @@ h1 {
     }
     100% {
         opacity: 0%;
+    }
+}
+
+@keyframes colors {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    25% {
+        color:rgb(160, 65, 255);
+    }
+    50% {
+        color:rgb(230, 64, 255);
+    }
+    75% {
+        color:rgb(237, 101, 146);
+    }
+    100% {
+        color: rgb(255, 255, 255);
     }
 }
