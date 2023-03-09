@@ -64,7 +64,7 @@ body {
 .category {
     position: relative;
     padding: 2vw;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
     border-radius: 1.5vw;
     color:white;
     border: 0;
@@ -91,10 +91,11 @@ body {
 }
 
 .dropdown:hover {
-    display: table;
+    display: flex;
+    height: fit-content;
     background-color: rgb(23, 23, 59);
     border-radius: 1.5vw;
-    border: white solid 1px;
+    border: rgb(96, 96, 172) solid 2px;
 }
 
 .dropdown:hover .dropdown-content {
