@@ -46,6 +46,11 @@ body {
     margin-bottom: 0.5vh;
     background-color: rgba(255, 151, 217, 0.407);
     border-radius: 2vw;
+    transition-duration: 0.5s;
+}
+
+#logo:hover {
+    font-size: 2vw;
 }
 
 #logo, .category {
@@ -74,12 +79,26 @@ body {
     align-items: center;
 }
 
-option, select {
-    background-color: rgb(23, 23, 59);
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+.dropdown-content {
+    display: none;
+    z-index: 1;
 }
 
-select {
-    outline: none;
+.dropdown:hover {
+    display: table;
+    background-color: rgb(23, 23, 59);
+    border-radius: 1.5vw;
+    border: white solid 1px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .category:hover {
@@ -93,26 +112,20 @@ h1, p {
                 Oxygen, Ubuntu, Cantarell, 
                 'Open Sans', 'Helvetica Neue',
                  sans-serif;
+    margin: 0;
 }
 
 p {
     color: rgb(255, 151, 217);
     font-size: 1.5vw;
-    letter-spacing: 1vw;
+    letter-spacing: 0.8vw;
 }
 
 h1 {
     color: rgb(255, 244, 251);
-    margin: 0;
-    margin-top: 20vh;
     font-size: 5vw;
     font-weight: 800;
     transition-duration: 1s;
-}
-
-h1:hover {
-    font-size: 6vw;
-    color:rgb(230, 64, 255);
 }
 
 @keyframes slide {

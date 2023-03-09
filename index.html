@@ -10,18 +10,18 @@
 <body>
     <div id="page">
         <div id="navbar">
-            <div id="logo">logo</div>
+            <div id="logo" onclick="window.location.href='index.html'">logo</div>
             <div class="category">CONTACTS</div>
-            <select class="category">
-                <option value="" selected disabled hidden>CATALOGS</option>
-                <option class="category" value="Nintendo">NINTENDO</option>
-                <option class="category" value="Blizzard">BLIZZARD</option>
-            </select>
+            <div class="dropdown">
+                <div class="category">CATALOGS</div>
+                <div class="dropdown-content category" value="Nintendo">NINTENDO</div>
+                <div class="dropdown-content category" value="Blizzard">BLIZZARD</div>
+            </div>
             <div class="category">FAQ</div>
-            <div class="category">FORUM</div>
+            <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
         </div>
         <div id="homePage">
-            <h1>电子游戏宇宙</h1>
+            <h1 style="margin-top: 20vh;">GAME COMPANY</h1>
             <p>Adventure. Fantasy. Story.</p>
         </div>
     </div>
