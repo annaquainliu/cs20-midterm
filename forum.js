@@ -79,14 +79,11 @@ window.onload = () => {
         let hours = d.getHours();
         let minutes = d.getMinutes();
         let time = "";
+        
         if (minutes < 10) {
             minutes = '0' + minutes;
         }
         if (hours > 12) {
-            if (hours % 12 == 0) {
-                //midnight special case
-                time = "12:" + minutes + " AM";
-            }
             time += (hours % 12) + ":" + minutes + " PM";
         }
         else {
@@ -94,7 +91,12 @@ window.onload = () => {
             if (hours == 12) {
                 time = "12:" + minutes + " PM";
             }
-            time += hours + ":" + minutes + " AM";
+            else if (hours == 0) {
+                time = "12:" + minutes + " AM";
+            }
+            else {
+                time += hours + ":" + minutes + " AM";
+            }
         }
         return "Today at " + time;
     }
