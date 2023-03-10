@@ -32,9 +32,7 @@
         margin-top:0vh; 
         border-radius: 4vw;
         position: relative;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: white;
-        font-size: 1.2vw;
     }
     .userinfo {
         display: table;
@@ -62,13 +60,15 @@
         font-weight: 700;
         color: rgb(255, 255, 255);
         font-size: 1.8vw;
+        width: 100%;
+        text-align: left;
     }
     .commentText {
         padding-top: 3vh;
         padding-left: 5vw;
-        color:rgba(206, 253, 255, 0.652);
+        color:rgb(139, 180, 182);
         text-align: left;
-        width: 90%;
+        width: 85%;
     }
     .likes {
         position: absolute;
@@ -82,6 +82,50 @@
         height: 2.5vw;
         background-image: url('images/heartUnliked.png');
         background-size: cover;
+    }
+    #makeComment {
+        margin: auto;
+        background-color: rgb(225, 234, 241);
+    }
+
+    #makeComment textarea {
+        border-radius: 1vw;
+        height: 6vh;
+        margin-top: 3vh;
+        margin-bottom: 8vh;
+        width: 85%;
+        border: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    #makeComment button {
+        position: absolute;
+        bottom: 2vh;
+        right: 5vw;
+        border: 0;
+        font-weight: 700;
+        padding: 1vw;
+        border-radius: 1.2vw;
+        background-color: rgba(21, 32, 66);
+        color: white;
+    }
+
+    .yourPfp {
+        background-color: rgba(225, 234, 241, 0);
+        background-image: url('images/anon.png');
+        background-size: cover;
+    }
+
+    #makeComment .username {
+        border-radius: 1vw;
+        width: 10vw;
+        color:rgba(21, 32, 66, 0.627);
+        border: 0;
+    }
+
+    .comment, #makeComment {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.2vw;
     }
     
 </style>
@@ -100,7 +144,7 @@
         </div>
         <div id="forum">
             <h1>FORUM</h1>
-            <p style="letter-spacing: 0vw; opacity: 80%;">Comment your feedback!</p>
+            <p style="letter-spacing: 0vw; color: white;">Comment your feedback!</p>
             <div id="comments">
                 <h2 style="text-align: left; width: 60%;">Most relevant</h2>
                 <div class="comment" style="margin-top: 0">
@@ -110,7 +154,8 @@
                         <div class="time">Yesterday at 3:50 PM</div>
                     </div>
                     <div class="commentText">
-                        SDADASDSNMAMSADNSAMDAMSDANDNAMDASKAC AS NSANC AKSNSANCKAC ASNCKNASCNKASNCS ANCKASCNSACN KSACJADA
+                        SDADASDSNMAMSADNSAMDAMSDANDNAMDASKAC AS NSANC AKSNSANCKAC ASNCKNASCNKASNCS ANCKASCNSACN KSACJADA!!
+                        I'VE BEEN WAITING FOR A WEBSITE LIKE THIS FOREVER!!!!!!!!
                     </div>
                     <div class="likes" liked=false>
                         <div class="heart"></div>
@@ -173,6 +218,14 @@
                         <span>1000</span>
                     </div>
                 </div>
+            </div>
+            <div class="comment" id="makeComment">
+                <div class="userinfo">
+                    <div class="yourPfp pfp"></div>
+                    <input class="username" placeholder='Username'></input>
+                </div>
+                <textarea rows='10' placeholder="Write a comment"></textarea>
+                <button id="submitComment">Comment</button>
             </div>
         </div>
     </div>
