@@ -33,6 +33,7 @@
         border-radius: 4vw;
         position: relative;
         color: white;
+        transition-duration: 1s;
     }
     .userinfo {
         display: table;
@@ -86,6 +87,7 @@
     #makeComment {
         margin: auto;
         background-color: rgb(225, 234, 241);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     #makeComment textarea {
@@ -127,7 +129,13 @@
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: 1.2vw;
     }
-    
+
+    #posted {
+        color:rgba(21, 32, 66); 
+        font-weight: 500; 
+        opacity: 0;
+        font-size: 2vw;
+    }
 </style>
 <body>
     <div>
@@ -225,10 +233,12 @@
                     <input class="username" placeholder='Username'></input>
                 </div>
                 <textarea rows='10' placeholder="Write a comment"></textarea>
+                <div id="posted">Posted!</div>
                 <button id="submitComment">Comment</button>
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="forum.js"></script>
 </body>
 </html>

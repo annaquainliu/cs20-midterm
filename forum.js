@@ -29,14 +29,17 @@ window.onload = () => {
 
     submitComment.addEventListener('click', () => {
         if (comment.value == "" || comment.value == null) {
-            alert("Please enter a comment!");
+            $('#posted').text('Please enter a comment!');
         }
         else if (username.value == "" || username.value == null) {
-            alert("Please enter a username!");
+            $('#posted').text('Please enter a username!');
         }
         else {
+            $('#posted').text('Posted!');
             makeComment(comment.value, username.value);
         }
+        $('#posted').animate({opacity: '100%'}, 200)
+                        .animate({opacity: '0%'}, 2000);
     });
 
     function makeComment(comment, username) {
