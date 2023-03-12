@@ -1,3 +1,4 @@
+
 #gameSlider {
     max-width: 1200px;
     position: relative;
@@ -12,7 +13,7 @@
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center center;
-    border-radius: 20px;
+    border-radius: 1.5vw;
 }
 
 
@@ -39,6 +40,10 @@
 
 #prev:hover, #next:hover {
     background-color: rgba(96, 96, 172, 0.275);
+}
+
+#background {
+    background-image: url('images/owbg.jpg');
 }
 
 /* .dot {
