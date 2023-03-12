@@ -15,12 +15,6 @@
     border-radius: 20px;
 }
 
-/* #gameSlider .slide img {
-    max-width: 100% !important;
-    height: auto;
-
-} */
-
 
 #prev, #next {
     cursor: pointer;
@@ -31,9 +25,9 @@
     margin-top: -22px;
     color: white;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
     transition: 0.2s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 5px;
     user-select: none;
 }
 #next {
@@ -47,6 +41,20 @@
     background-color: rgba(96, 96, 172, 0.275);
 }
 
+/* .dot {
+    cursor: pointer;
+    height: 5px;
+    width: 30px;
+    margin: 0 4px;
+    background-color: #00d0ff4a;
+    border-radius: 10%;
+    display: inline-block;
+    transition: 0.2s ease;
+}
+
+.dot:hover {
+    background-color: #00d0ff;
+} */
 
 
 

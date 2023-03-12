@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="game_store.css">
     <title>Game Store--TBD</title>
+    <script src="game_store.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -23,22 +24,31 @@
             <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
         </div>
         <div id="gameSlider">
-            <div class="slide" style="background-image: url('images/OW3.png'); background-color: rgba(255, 255, 255, 0.45);"></div>
+            <div class="slide" style="background-image: url('images/OW3.png'); background-color: rgba(255, 255, 255, 0.45); display: block;"></div>
             <div class="slide" style="background-image: url('images/monster_hunter_resize.png'); background-color: rgba(255, 255, 255, 0.45);"></div>
-            <div class="slide" style="background-image: url('images/apex.png'); background-color: rgba(255, 0, 0, 0.45); display: block;"></div>
-            <!-- <div class="slide"><img src="images/cod.png"></div> -->
+            <div class="slide" style="background-image: url('images/apex.png'); background-color: rgba(255, 0, 0, 0.45);"></div>
             <div class="slide" style="background-image: url('images/cod.png'); background-color: rgba(33, 225, 19, 0.692);"></div>
 
             <a id="next">&#10095;</a>
             <a id="prev">&#10094;</a>
         </div>
     </div>
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
+    <script>
+        $(document).ready(function () {
+            var index = 0;
+            var games = document.getElementsByClassName('slide');
+            $("#next").click(function () {
+                index = nextGame(games, index);
+                display(games, index);
+            });
+            $("#prev").click(function () {
+                index = prevGame(games, index);
+                display(games, index);
+            });
+        });
+
+    </script>
+
     <div id="background"></div>
     <script src="home.js"></script>
 </body>
