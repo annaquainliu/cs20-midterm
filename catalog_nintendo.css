@@ -197,7 +197,15 @@ h2 {
 }
 
 #background {
-    background-image: url('images/owbg.jpg');
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+    opacity: 10%;
+    background-image: url('images/acbg.png');
 }
 
 .game {
