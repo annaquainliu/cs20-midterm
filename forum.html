@@ -8,6 +8,9 @@
     <title>Forum | CS20 Midterm</title>
 </head>
 <style>
+#forumBackground {
+    background-image: linear-gradient(rgba(21, 32, 66, 0.933), rgba(21, 32, 66, 0.933)), url('images/notplaystation.png');
+}
 #forum {
     width: 100%;
     display: table;
@@ -23,7 +26,7 @@
 }
 .comment {
     width: 60%;
-    background-color: rgba(95, 158, 160, 0.292);
+    background-color: rgb(51, 64, 103);
     padding-left: 3vw;
     padding-right: 3vw;
     padding-top: 4vh;
@@ -162,16 +165,16 @@
 
 </style>
 <body>
-    <div>
+    <div id="forumBackground">
         <div id="navbar">
             <div id="logo" onclick="window.location.href='index.html'">logo</div>
             <div class="category">CONTACTS</div>
             <div class="dropdown">
                 <div class="category">CATALOGS</div>
-                <div class="dropdown-content category" value="Nintendo">NINTENDO</div>
-                <div class="dropdown-content category" value="Blizzard" onclick="window.location.href='game_store.html';">BLIZZARD</div>
+                <div class="dropdown-content category">NINTENDO</div>
+                <div class="dropdown-content category" onclick="window.location.href='game_store.html';">NON-NINTENDO</div>
             </div>
-            <div class="category">FAQ</div>
+            <div class="category" onclick="window.location.href='faq.html';">FAQ</div>
             <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
         </div>
         <div id="forum">
