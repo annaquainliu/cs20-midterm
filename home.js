@@ -1,6 +1,6 @@
 window.onload = () => {
     const background = document.getElementById("background");
-    const images = ["R.jpg", "blizzard.jpg", "apex.png", "cod.png"];
+    const images = ["R.png", "blizzard.jpg", "apex.png", "cod.png", "mhr.png"];
     var imageIndex = 0;
 
     function addAnimation() {
