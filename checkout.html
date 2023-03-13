@@ -32,13 +32,10 @@
         width: 40vw;
     }
     h2 {
-        color: white;
+        color: rgb(205, 113, 172);
         font-weight: 600;
         width:fit-content;
         border-radius: 1vw;
-        background-color: rgb(130, 11, 163);
-        padding-left: 1vw;
-        padding-right: 1vw;
     }
 
     table td {
@@ -52,6 +49,7 @@
         background-color: rgb(205, 113, 172);
         border-radius: 1vw;
     }
+    
 </style>
 <body>
     <div id="navbar">
@@ -69,7 +67,7 @@
     <div id="checkout">
         <h1 style="margin-bottom: 5vh;">CHECKOUT</h1>
         <h2 style="margin-bottom: 3vh;">PRODUCTS</h2>
-        <table>
+        <table id="checkoutTable">
             <tr>
               <th>Game</th>
               <th>Company</th>
@@ -77,50 +75,19 @@
               <th>Quantity</th>
               <th>+/-</th>
             </tr>
-            <tr>
-              <td>Fuzzy Leapard</td>
-              <td>Fuzzy Leapard</td>
+             <!-- <tr>
+              <td>Overwatch</td>
+              <td>Blizzard</td>
               <td>$35</td>
               <td>0</td>
               <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
-            </tr>
+            </tr>  -->
+            
             <tr>
-                <td>Long Boy</td>
-                <td>Fuzzy Leapard</td>
-                <td>$100</td>
-                <td>0</td>
-                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
-            </tr>
-            <tr>
-                <td>Geometry</td>
-                <td>Fuzzy Leapard</td>
-                <td>$95</td>
-                <td>0</td>
-                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
-            </tr>
-            <tr>
-                <td>Medium Boy</td>
-                <td>Fuzzy Leapard</td>
-                <td>$45</td>
-                <td>0</td>
-                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
-            </tr>
-            <tr>
-                <td>Panda Snuggy</td>
-                <td>Fuzzy Leapard</td>
-                <td>$50</td>
-                <td>0</td>
-                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
-            </tr>
-            <tr>
-                <td>Head Rest</td>
-                <td>Fuzzy Leapard</td>
-                <td>$25</td>
-                <td>0</td>
-                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
-            </tr>
-            <tr colspan="2">
                 <td>Total: </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
                 <td id="totalPrice">$0</td>
             </tr>
         </table>
