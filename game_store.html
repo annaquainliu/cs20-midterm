@@ -17,11 +17,12 @@
             <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
             <div class="dropdown">
                 <div class="category">CATALOGS</div>
-                <div class="dropdown-content category">NINTENDO</div>
+                <div class="dropdown-content category" onclick="window.location.href='catalog_nintendo.html';">NINTENDO</div>
                 <div class="dropdown-content category" onclick="window.location.href='game_store.html';">NON-NINTENDO</div>
             </div>
             <div class="category" onclick="window.location.href='faq.html';">FAQ</div>
             <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
+            <div class="category" onclick="window.location.href='checkout.html';">CHECKOUT</div>
         </div>
         <div id="gameSlider">
             <div class="slide" id="OverWatch" style="background-image: url('images/OW3.png'); background-color: rgba(255, 255, 255, 0.45); display: block;"></div>
@@ -112,11 +113,7 @@
                 });
 
                 $(buyBtns[j]).click(function () {
-                    var newWindow = window.open("https://annaquainliu.github.io/cs20-midterm/checkout.html","_blank");
-                    // add whatever is needed 
-                    // games[j].id is the name of the game
-                    // gamePrice[games[j].id] is the price of the game
-                    // gameCompany[games[j].id] is the company
+                    window.open(`checkout.html?game=${games[j].id}`,"_blank");
                 });
             }
         });

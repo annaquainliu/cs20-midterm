@@ -10,16 +10,17 @@
     <body>
         <div id="page">
             <div id="navbar">
-                <div id="logo">logo</div>
-                    <div class="category">CONTACTS</div>
-                    <div class="dropdown">
-                        <div class="category">CATALOGS</div>
-                        <div class="dropdown-content category" value="Nintendo">NINTENDO</div>
-                        <div class="dropdown-content category" value="Blizzard">BLIZZARD</div>
-                    </div>
-                    <div class="category">FAQ</div>
-                    <div class="category">FORUM</div>
+                <div id="logo" onclick="window.location.href='index.html'"></div>
+                <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
+                <div class="dropdown">
+                    <div class="category">CATALOGS</div>
+                    <div class="dropdown-content category" onclick="window.location.href='catalog_nintendo.html';">NINTENDO</div>
+                    <div class="dropdown-content category" onclick="window.location.href='game_store.html';">NON-NINTENDO</div>
                 </div>
+                <div class="category" onclick="window.location.href='faq.html';">FAQ</div>
+                <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
+                <div class="category" onclick="window.location.href='checkout.html';">CHECKOUT</div>
+            </div>
                 <h1>Shop Nintendo games!</h1>
                 <div id="gameSlider">
                     <div class="slide" id="ac" style="background-image: url('images/ac.png'); background-color: rgba(255, 255, 255, 0.45); display: block;"></div>

@@ -32,4 +32,15 @@ function changePrice(amount) {
     totalPrice.innerText = "$" + price;
 }
 
-window.onload = addListeners;
+window.onload = () => {
+    addListeners();
+    let url = window.location.href;
+    if (url.includes("game=")) {
+        url = url.split('?')[1];
+        let selectedGame = url.slice(url.indexOf("game=") + 5, url.length);
+        // console.log(selectedGame);
+        const quant = document.getElementById(selectedGame).children[4].children[0];
+        // console.log(quant);
+        quant.click();
+    }
+};
