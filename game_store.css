@@ -46,20 +46,40 @@
     background-image: url('images/owbg.jpg');
 }
 
-/* .dot {
-    cursor: pointer;
-    height: 5px;
-    width: 30px;
-    margin: 0 4px;
-    background-color: #00d0ff4a;
-    border-radius: 10%;
-    display: inline-block;
-    transition: 0.2s ease;
+.game {
+    opacity: 0%;
+    display: none;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 2vh;
+    max-width: 1200px;
+    height: 0px;
+    border-radius: 1.5vw;
+    margin-bottom: 2vh;
+    flex: 1;
 }
 
-.dot:hover {
-    background-color: #00d0ff;
-} */
+.game .discription {
+    text-align: center;
+    flex-grow: 1;
+    margin: auto;
+    margin-top: 10px;
+    opacity: 0%;
+    display: none;
+    width: 0px;
+    border-radius: 1.5vw;
+    text-align: center;
+}
 
-
+.buy {
+    opacity: 0%;
+    display: none;
+    width: 0px;
+    height: 3vh;
+    border-radius: 1.5vw;
+    background-color: rgba(255, 151, 217, 0.407);
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+}
 

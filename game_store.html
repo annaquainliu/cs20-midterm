@@ -32,22 +32,62 @@
             <a id="next">&#10095;</a>
             <a id="prev">&#10094;</a>
         </div>
+        <div id="gameInfo">
+            <div class="game" style="background-color: rgba(255, 255, 255, 0.45);">
+                <div class="discription">say something about the game</div>
+                <div class="buy">BUY</div>
+            </div>
+            <div class="game" style="background-color: rgba(9, 61, 165, 0.583);">
+                <div class="discription">say something about the game</div>
+                <div class="buy">BUY</div>
+            </div>
+            <div class="game" style="background-color: rgba(255, 0, 0, 0.45);">
+                <div class="discription">say something about the game</div>
+                <div class="buy">BUY</div>
+            </div>
+            <div class="game" style="background-color: rgba(33, 225, 19, 0.615);">
+                <div class="discription">say something about the game</div>
+                <div class="buy">BUY</div>
+            </div>
+        </div>
     </div>
     <script>
         $(document).ready(function () {
+            var heightInfo = '35vh'
             const imgs = ["owbg.jpg", "mhbg.jpg", "apex.jpg", "cod.jpg"];
             var index = 0;
             var games = document.getElementsByClassName('slide');
+            var info = document.getElementsByClassName('game');
+            var fstClick = true;
+            var buyBtns = document.getElementsByClassName('buy');
+            var discript = document.getElementsByClassName('discription');
             $("#next").click(function () {
+                if (!fstClick) {
+                    fstClick = toggleHeight(info[index], fstClick, heightInfo);
+                    toggleWidth(buyBtns[index], !fstClick);
+                    toggleWidth(discript[index], !fstClick);
+                }
                 index = nextGame(games, index);
                 display(games, index);
                 changeBackGround(imgs, index);
             });
             $("#prev").click(function () {
+                if (!fstClick) {
+                    fstClick = toggleHeight(info[index], fstClick, heightInfo);
+                    toggleWidth(buyBtns[index], !fstClick);
+                    toggleWidth(discript[index], !fstClick);
+                }
                 index = prevGame(games, index);
                 display(games, index);
                 changeBackGround(imgs, index);
             });
+            for (let i = 0; i < games.length; ++i) {
+                $(games[i]).click(function () {
+                    fstClick = toggleHeight(info[i], fstClick, heightInfo);
+                    toggleWidth(buyBtns[i], !fstClick);
+                    toggleWidth(discript[i], !fstClick);
+                });
+            }
         });
 
     </script>
