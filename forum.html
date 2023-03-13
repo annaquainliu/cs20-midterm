@@ -36,7 +36,12 @@
     border-radius: 4vw;
     position: relative;
     color: white;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
+}
+
+.comment:hover {
+    background-color: rgb(89, 52, 111);
+    width: 65%;
 }
 .userinfo {
     display: table;
@@ -151,6 +156,10 @@
     border: 0;
 }
 
+#makeComment:hover {
+    width: 60%;
+}
+
 .comment, #makeComment {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.2vw;
@@ -162,6 +171,15 @@
     opacity: 0;
     font-size: 2vw;
 }
+
+#sort {
+    width: 60%; 
+    margin-bottom: 3vh; 
+    margin-top: 3vh;
+    border-radius: 1vw;
+    text-align: left;
+}
+
 
 </style>
 <body>
@@ -179,9 +197,9 @@
         </div>
         <div id="forum">
             <h1>FORUM</h1>
-            <p style="letter-spacing: 0vw; color: white;">Comment your feedback!</p>
+            <h2>Comment your feedback!</h2>
             <div id="comments">
-                <h2 style="text-align: left; width: 60%; margin-bottom: 3vh;">Most relevant</h2>
+                <h2 id="sort">Most Relevant</h2>
                 <div class="comment">
                     <div class="userinfo">
                         <div class="pfp" id="pfp1"></div>
