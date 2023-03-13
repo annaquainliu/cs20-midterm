@@ -35,19 +35,19 @@
         <div id="gameInfo">
             <div class="game" style="background-color: rgba(255, 255, 255, 0.45);">
                 <div class="discription">say something about the game</div>
-                <div class="buy">BUY</div>
+                <div class="buy" style="color: rgba(255, 192, 2, 0.897); background-color: rgba(58, 67, 66, 0.727);"><b>BUY</b></div>
             </div>
             <div class="game" style="background-color: rgba(9, 61, 165, 0.583);">
                 <div class="discription">say something about the game</div>
-                <div class="buy">BUY</div>
+                <div class="buy" style="color: white; background-color: rgba(23, 25, 24, 0.727);"><b>BUY</b></div>
             </div>
             <div class="game" style="background-color: rgba(255, 0, 0, 0.45);">
                 <div class="discription">say something about the game</div>
-                <div class="buy">BUY</div>
+                <div class="buy" style="color: white; background-color: rgba(82, 10, 10, 0.727);"><b>BUY</b></div>
             </div>
             <div class="game" style="background-color: rgba(33, 225, 19, 0.615);">
                 <div class="discription">say something about the game</div>
-                <div class="buy">BUY</div>
+                <div class="buy" style="color: rgba(0, 0, 0, 0.976); background-color: rgba(144, 215, 142, 0.727);"><b>BUY</b></div>
             </div>
         </div>
     </div>
@@ -81,11 +81,26 @@
                 display(games, index);
                 changeBackGround(imgs, index);
             });
+            $(window).resize(function () {
+                if (!fstClick) {
+                    changeWidth(buyBtns[index], $(buyBtns[index]).parent().width() / 2);
+                    changeWidth(discript[index], $(discript[index]).parent().width() * 3 / 4);
+                }
+            });
             for (let i = 0; i < games.length; ++i) {
                 $(games[i]).click(function () {
                     fstClick = toggleHeight(info[i], fstClick, heightInfo);
                     toggleWidth(buyBtns[index], !fstClick, $(buyBtns[index]).parent().width() / 2);
                     toggleWidth(discript[index], !fstClick, $(discript[index]).parent().width() * 3 / 4);
+                });
+            }
+            for (let j = 0; j < buyBtns.length; ++j) {
+                $(buyBtns[j]).mouseenter(function () {
+                    changeWidth(buyBtns[j], $(buyBtns[j]).parent().width() * 3 / 4);
+                });
+
+                $(buyBtns[j]).mouseleave(function () {
+                    changeWidth(buyBtns[j], $(buyBtns[j]).parent().width() / 2);
                 });
             }
         });

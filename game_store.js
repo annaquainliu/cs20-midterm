@@ -57,5 +57,8 @@ function toggleWidth (elem, fstClick, width) {
     return !fstClick;
 }
 
+function changeWidth (elem, to) {
+    $(elem).animate({width: to}, {duration: 200, queue: false});
+}
 
 
