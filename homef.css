@@ -21,7 +21,7 @@ body {
 
 #page {
     position: relative;
-    z-index: 2;
+    background-image: linear-gradient(rgba(21, 32, 66, 0.933), rgba(21, 32, 66, 0.933)), url('images/notplaystation.png');
 }
 
 #navbar {
@@ -30,7 +30,7 @@ body {
     top: 0;
     width: 100%;
     height: 11vh;
-    background-color: rgb(23, 23, 59);
+    background-color: rgb(2, 2, 33);
     display: flex;
     flex-direction: row;
     color: rgb(255, 255, 255);
@@ -42,17 +42,18 @@ body {
 #logo {
     position: absolute;
     left: 0;
-    width: 5vw;
-    height: 10vh;
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    background-color: rgba(255, 151, 217, 0.407);
-    border-radius: 2vw;
-    transition-duration: 0.5s;
+    margin-left: 1vw;
+    height: 11vh;
+    width: 14vw;
+    background-image: url('images/notplaystation.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    transition-duration: 0.3s;
 }
 
 #logo:hover {
-    font-size: 2vw;
+    width: 15vw;
 }
 
 #logo, .category {
