@@ -21,7 +21,7 @@ body {
 
 #page {
     position: relative;
-    z-index: 2;
+    background-image: linear-gradient(rgba(21, 32, 66, 0.933), rgba(21, 32, 66, 0.933)), url('images/notplaystation.png');
 }
 
 #navbar {
