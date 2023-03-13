@@ -26,7 +26,7 @@
     table {
         color: rgb(192, 192, 241);
         font-size: 1.5vw;
-        font-weight: 400;
+        font-weight: 200;
         margin: auto;
         margin-bottom: 3vw;
         width: 60vw;
@@ -56,13 +56,23 @@
         border: 0;
         font-size: 1.2vw;
         border-radius: 1vw;
+        height: 2vw;
+    }
+
+    .title, span {
+       text-decoration: bold;
+       font-weight: 800;
+       color: white;
+    }
+    #totalPrice {
+        color:rgb(205, 113, 172);
+        font-weight: 800;
     }
     
 </style>
 <body>
     <div id="navbar">
         <div id="logo" onclick="window.location.href='index.html'"></div>
-        <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
         <div class="dropdown">
             <div class="category">CATALOGS</div>
             <div class="dropdown-content category" onclick="window.location.href='catalog_nintendo.html';">NINTENDO</div>
@@ -71,6 +81,7 @@
         <div class="category" onclick="window.location.href='faq.html';">FAQ</div>
         <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
         <div class="category" onclick="window.location.href='checkout.html';">CHECKOUT</div>
+        <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
     </div>
     <div id="checkout">
         <h1 style="margin-bottom: 5vh;">CHECKOUT</h1>
@@ -84,56 +95,56 @@
               <th>+/-</th>
             </tr>
              <tr id="overwatch">
-              <td>Overwatch</td>
+              <td class="title">Overwatch</td>
               <td>Blizzard</td>
               <td>$35</td>
               <td>0</td>
               <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
             </tr> 
             <tr id="monsterHunter">
-                <td>Monster Hunter</td>
+                <td class="title">Monster Hunter</td>
                 <td>Capcom</td>
                 <td>$59.99</td>
                 <td>0</td>
                 <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
             </tr>
             <tr id="apexLegends">
-                <td>Apex Legends</td>
+                <td class="title">Apex Legends</td>
                 <td>Electronic Arts</td>
                 <td>$35</td>
                 <td>0</td>
                 <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
             </tr>
             <tr id="cod">
-                <td>Call of Duty</td>
+                <td class="title">Call of Duty</td>
                 <td>Activison</td>
                 <td>$69.99</td>
                 <td>0</td>
                 <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
             </tr>  
             <tr id="animalCrossing">
-                <td>Animal Crossing</td>
+                <td class="title">Animal Crossing</td>
                 <td>New Horizons</td>
                 <td>$35</td>
                 <td>0</td>
                 <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
             </tr>  
             <tr id="monsterHunter2">
-                <td>Monster Hunter</td>
+                <td class="title">Monster Hunter</td>
                 <td>Rise</td>
                 <td>$35</td>
                 <td>0</td>
                 <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
             </tr>  
             <tr id="fireEmblem">
-                <td>Fire Emblem</td>
+                <td class="title">Fire Emblem</td>
                 <td>Three Horses</td>
                 <td>$35</td>
                 <td>0</td>
                 <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
             </tr>  
             <tr>
-                <td>Total: </td>
+                <td class="title">Total: </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -142,6 +153,8 @@
         </table>
         <button>Purchase!</button>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
     <script src="checkout.js"></script>
 </body>
 </html>

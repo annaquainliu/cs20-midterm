@@ -24,7 +24,11 @@ function addListeners() {
                 changePrice(-1 * price);
             }
         });
-    })
+    });
+    $('button').click(() => {
+        $('button').animate({backgroundColor: 'rgb(158, 49, 118);'}, 200)
+                   .animate({backgroundColor: 'rgb(205, 113, 172)'}, 200);
+    });
 }
 
 function changePrice(amount) {
@@ -38,9 +42,7 @@ window.onload = () => {
     if (url.includes("game=")) {
         url = url.split('?')[1];
         let selectedGame = url.slice(url.indexOf("game=") + 5, url.length);
-        // console.log(selectedGame);
         const quant = document.getElementById(selectedGame).children[4].children[0];
-        // console.log(quant);
         quant.click();
     }
 };
