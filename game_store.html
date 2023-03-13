@@ -24,10 +24,10 @@
             <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
         </div>
         <div id="gameSlider">
-            <div class="slide" id="OverWatch" style="background-image: url('images/OW3.png'); background-color: rgba(255, 255, 255, 0.45); display: block;"></div>
-            <div class="slide" id="MonsterHunter" style="background-image: url('images/monster_hunter_resize.png'); background-color: rgba(9, 61, 165, 0.583);"></div>
-            <div class="slide" id="ApexLegends" style="background-image: url('images/apex.png'); background-color: rgba(255, 0, 0, 0.45);"></div>
-            <div class="slide" id="CallofDuty" style="background-image: url('images/cod.png'); background-color: rgba(33, 225, 19, 0.615);"></div>
+            <div class="slide" id="overwatch" style="background-image: url('images/OW3.png'); background-color: rgba(255, 255, 255, 0.45); display: block;"></div>
+            <div class="slide" id="monsterHunter" style="background-image: url('images/monster_hunter_resize.png'); background-color: rgba(9, 61, 165, 0.583);"></div>
+            <div class="slide" id="apexLegends" style="background-image: url('images/apex.png'); background-color: rgba(255, 0, 0, 0.45);"></div>
+            <div class="slide" id="cod" style="background-image: url('images/cod.png'); background-color: rgba(33, 225, 19, 0.615);"></div>
 
             <a id="next">&#10095;</a>
             <a id="prev">&#10094;</a>
@@ -59,8 +59,8 @@
     </div>
     <script>
         $(document).ready(function () {
-            const gameCompany = {"OverWatch": "Blizzard", "MonsterHunter": "Capcom", "ApexLegends": "EA", "CallofDuty": "Activision"};
-            const gamePrice = {"OverWatch": 0, "MonsterHunter": 59.99, "ApexLegends": 0, "CallofDuty": 69.99};
+            // const gameCompany = {"OverWatch": "Blizzard", "MonsterHunter": "Capcom", "ApexLegends": "EA", "CallofDuty": "Activision"};
+            // const gamePrice = {"OverWatch": 0, "MonsterHunter": 59.99, "ApexLegends": 0, "CallofDuty": 69.99};
             var heightInfo = '35vh'
             const imgs = ["owbg.jpg", "mhbg.jpg", "apex.jpg", "cod.jpg"];
             var index = 0;
@@ -113,10 +113,11 @@
 
                 $(buyBtns[j]).click(function () {
                     var newWindow = window.open("https://annaquainliu.github.io/cs20-midterm/checkout.html","_blank");
-                    // add whatever is needed 
-                    // games[j].id is the name of the game
-                    // gamePrice[games[j].id] is the price of the game
-                    // gameCompany[games[j].id] is the company
+                    console.log(games[j].id);
+                    console.log(newWindow.document.getElementById(games[j].id));
+                    let quan = newWindow.document.getElementById(games[j].id).children[3];
+                    console.log(quan);
+                    quan.innerHTML = parseInt(quan.innerHTML) + 1;
                 });
             }
         });
