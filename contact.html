@@ -24,9 +24,9 @@
                 customers the best possible experience while shopping
                 at Not PlayStation.</p>
             <div class="rating">
-                <form></form>
+                <form>
                     <p class="title">Customer feedback form</p>
-                    <p class="subtitle">How was your experience shopping at notOnPlayStation today?</p>
+                    <p class="subtitle">How was your experience shopping at Not PlayStation today?</p>
                     <div style="margin-left: 10%; margin-right: 10%;">
                         <p><input type="radio" name="rating" value="1">Bad</p>
                         <p><input type="radio" name="rating" value="2">Could be better</p>
@@ -36,11 +36,29 @@
                     </div>
                     <p class="subtitle" style="padding-top: 0.5vw;">Write us a message and tell us how we're doing!</p>
                     <textarea style="width: 100%;" rows="5"></textarea>
-                    <p style="text-align: right;"><input type="submit" id="submittext" value="Send us your feedback now!"></p>
+                    <p style="text-align: right;"><button type="button" id="submittext">Send us your feedback now!</button></p>
                     <p class="bottomtext">Having a different issue? We're sorry to hear that!</p>
                     <p class="bottomtext">Contact us at <a href="tel:012-345-6789">012-345-6789</a> or <a href="mailto:notonplaystation@mail.org">notonplaystation@mail.org</a></p>
                 </form>
             </div>
         </div>
     </body>
+    <script>
+        window.onload = () => {
+            const button = document.getElementById('submittext');
+            const textarea = document.querySelector('textarea');
+            button.addEventListener('click', () => {
+                let rating = document.querySelector('input[name="rating"]:checked');
+                if (rating == "" || rating == null) {
+                    alert("Please select a rating!");
+                }
+                else if (textarea.value == "" || textarea.value == null) {
+                    alert("Please write a message!");
+                }
+                else {
+                    alert("Your message has been received.");
+                }
+            })
+        }
+    </script>
 </html>
