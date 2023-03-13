@@ -145,10 +145,32 @@ h1, p, h2 {
 }
 
 .logo {
-    height: 7vh;
-    width: auto;
+    width: 7vw;
+    height: 10vh;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+#logos {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: row;
+    height: 10vh;
+    justify-content: center;
+}
+
+#blizzard {
+    background-image: url('images/blizzardlogo.png');
+}
+
+#nintendo {
+    background-image: url('images/nintendo.png');
+}
+#ea {
+    background-image: url('images/ea.png');
+}
 p {
     color: rgb(255, 151, 217);
     font-size: 1.5vw;
