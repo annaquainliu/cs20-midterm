@@ -69,6 +69,7 @@
     width: 0px;
     border-radius: 1.5vw;
     text-align: center;
+    overflow: hidden;
 }
 
 .buy {
