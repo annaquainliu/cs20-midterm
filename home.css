@@ -107,7 +107,7 @@ body {
     background-color: rgba(255, 151, 217, 0.31);
 }
 
-h1, p {
+h1, p, h2 {
     font-family:system-ui, -apple-system, 
                 BlinkMacSystemFont, 
                 'Segoe UI', Roboto, 
@@ -117,9 +117,32 @@ h1, p {
     margin: 0;
 }
 
+#mainLogo {
+    margin-top: 20vh;
+}
+
+#homePage h1 {
+    margin: 0;
+    color: white;
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+#homePage h2 {
+    font-weight: 200;
+    margin-bottom: 7vh;
+    color: rgba(255, 255, 255, 0.604);
+    font-size: 1.5vw;
+}
+
+.logo {
+    height: 7vh;
+    width: auto;
+}
+
 p {
     color: rgb(255, 151, 217);
-    font-size: 1.5vw;
+    font-size: 1.6vw;
     letter-spacing: 0.8vw;
     font-weight: 500;
 }
