@@ -61,3 +61,8 @@ function changeWidth (elem, to) {
     $(elem).animate({width: to}, {duration: 200, queue: false});
 }
 
+function hideTitle (title) {
+    $(title).delay(500).animate({opacity: '0%', height: '0px', 'margin-top': '0px'});
+    $(title).delay(800).hide(0);
+}
+
