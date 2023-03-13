@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="home.css"></link>
+</head>
+<style>
+    * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    body {
+        background-color: rgb(21, 32, 66);
+        background-image: linear-gradient(rgba(21, 32, 66, 0.933), rgba(21, 32, 66, 0.933)), url('images/notplaystation.png'), linear-gradient(rgb(21, 32, 66), rgb(21, 32, 66));
+    }
+    #checkout {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    table {
+        color: rgb(192, 192, 241);
+        font-size: 1.5vw;
+        font-weight: 400;
+        margin: auto;
+        margin-bottom: 3vw;
+        width: 40vw;
+    }
+    h2 {
+        color: rgb(205, 113, 172);
+        font-weight: 600;
+        width:fit-content;
+        border-radius: 1vw;
+    }
+
+    table td {
+        text-align: center;
+    }
+    table tr th, table tr td {
+        width: 10vw;
+    }
+    table tr th {
+        color: white;
+        background-color: rgb(205, 113, 172);
+        border-radius: 1vw;
+    }
+    
+</style>
+<body>
+    <div id="navbar">
+        <div id="logo" onclick="window.location.href='index.html'"></div>
+        <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
+        <div class="dropdown">
+            <div class="category">CATALOGS</div>
+            <div class="dropdown-content category">NINTENDO</div>
+            <div class="dropdown-content category" onclick="window.location.href='game_store.html';">NON-NINTENDO</div>
+        </div>
+        <div class="category" onclick="window.location.href='faq.html';">FAQ</div>
+        <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
+        <div class="category" onclick="window.location.href='checkout.html';">CHECKOUT</div>
+    </div>
+    <div id="checkout">
+        <h1 style="margin-bottom: 5vh;">CHECKOUT</h1>
+        <h2 style="margin-bottom: 3vh;">PRODUCTS</h2>
+        <table id="checkoutTable">
+            <tr>
+              <th>Game</th>
+              <th>Company</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>+/-</th>
+            </tr>
+             <tr id="overwatch">
+              <td>Overwatch</td>
+              <td>Blizzard</td>
+              <td>$35</td>
+              <td>0</td>
+              <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
+            </tr> 
+            <tr id="monsterHunter">
+                <td>Monster Hunter</td>
+                <td>Capcom</td>
+                <td>$35</td>
+                <td>0</td>
+                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
+            </tr>
+            <tr id="apexLegends">
+                <td>Apex Legends</td>
+                <td>Electronic Arts</td>
+                <td>$35</td>
+                <td>0</td>
+                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
+            </tr>
+            <tr id="cod">
+                <td>Call of Duty</td>
+                <td>Activison</td>
+                <td>$35</td>
+                <td>0</td>
+                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
+            </tr>  
+            <tr>
+                <td>Total: </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td id="totalPrice">$0</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
