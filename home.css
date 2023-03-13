@@ -211,3 +211,15 @@ h2 {
         opacity: 0%;
     }
 }
+
+@media only screen and (max-device-width: 500px)  {
+    .category {
+        font-size: 2vw;
+    }
+    #homePage h1 {
+        font-size: 4vw;
+    }
+    #homePage h2 {
+        font-size: 4vw;
+    }
+}

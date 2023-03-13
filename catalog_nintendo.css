@@ -317,20 +317,8 @@ input[type="submit"] {
     }
 }
 
-@keyframes colors {
-    0% {
-        color: rgb(255, 255, 255);
-    }
-    25% {
-        color:rgb(160, 65, 255);
-    }
-    50% {
-        color:rgb(230, 64, 255);
-    }
-    75% {
-        color:rgb(237, 101, 146);
-    }
-    100% {
-        color: rgb(255, 255, 255);
+@media only screen and (max-device-width: 500px)  {
+    .category {
+        font-size: 2vw;
     }
 }

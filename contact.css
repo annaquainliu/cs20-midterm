@@ -212,18 +212,9 @@ button {
     font-size: 0.8vw;
 }
 
-@keyframes slide {
-    0% {
-        opacity: 0%;
-    }
-    20% {
-        opacity: 10%;
-    }
-    80% {
-        opacity: 10%;
-    }
-    100% {
-        opacity: 0%;
+@media only screen and (max-device-width: 500px)  {
+    .category {
+        font-size: 2vw;
     }
 }
 
