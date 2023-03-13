@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nintendo Catalog | notOnPlayStation</title>
+        <link rel="stylesheet" href="catalog_nintendo.css">
+        <script src="home.js"></script>
+        <script src="game_store.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="page">
+            <div id="navbar">
+                <div id="logo">logo</div>
+                    <div class="category">CONTACTS</div>
+                    <div class="dropdown">
+                        <div class="category">CATALOGS</div>
+                        <div class="dropdown-content category" value="Nintendo">NINTENDO</div>
+                        <div class="dropdown-content category" value="Blizzard">BLIZZARD</div>
+                    </div>
+                    <div class="category">FAQ</div>
+                    <div class="category">FORUM</div>
+                </div>
+                <h1>Shop Nintendo games!</h1>
+                <div id="gameSlider">
+                    <div class="slide" id="ac" style="background-image: url('images/ac.png'); background-color: rgba(255, 255, 255, 0.45);"></div>
+                    <div class="slide" id="mc" style="background-image: url('images/mc.png'); background-color: rgba(9, 61, 165, 0.583);"></div>
+                    <div class="slide" id="mhr" style="background-image: url('images/mhr.png'); background-color: rgba(255, 0, 0, 0.45);"></div>
+                    <div class="slide" id="fe" style="background-image: url('images/fe.png'); background-color: rgba(33, 225, 19, 0.615);"></div>
+        
+                    <a id="next">&#10095;</a>
+                    <a id="prev">&#10094;</a>
+                </div>
+                <div id="gameInfo">
+                    <div class="game" style="background-color: rgba(255, 255, 255, 0.45);">
+                        <div class="discription">say something about the game</div>
+                        <div class="buy">BUY</div>
+                    </div>
+                    <div class="game" style="background-color: rgba(9, 61, 165, 0.583);">
+                        <div class="discription">say something about the game</div>
+                        <div class="buy">BUY</div>
+                    </div>
+                    <div class="game" style="background-color: rgba(255, 0, 0, 0.45);">
+                        <div class="discription">say something about the game</div>
+                        <div class="buy">BUY</div>
+                    </div>
+                    <div class="game" style="background-color: rgba(33, 225, 19, 0.615);">
+                        <div class="discription">say something about the game</div>
+                        <div class="buy">BUY</div>
+                    </div>
+                </div>
+            </div>
+            <div id="background"></div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var heightInfo = '35vh'
+                const imgs = ["ac.png", "mc.png", "mhr.png", "fe.png"];
+                var index = 0;
+                var fstClick = true;
+
+                var games = document.getElementsByClassName('slide');
+                console.log(games);
+                var info = document.getElementsByClassName('game');
+                
+                var buyBtns = document.getElementsByClassName('buy');
+                var discript = document.getElementsByClassName('discription');
+
+                $("#next").click(function () {
+                    if (!fstClick) {
+                        fstClick = toggleHeight(info[index], fstClick, heightInfo);
+                        toggleWidth(buyBtns[index], !fstClick, $(buyBtns[index]).parent().width() / 2);
+                        toggleWidth(discript[index], !fstClick, $(discript[index]).parent().width() * 3 / 4);
+                    }
+                    index = nextGame(games, index);
+                    display(games, index);
+                    changeBackGround(imgs, index);
+                });
+                $("#prev").click(function () {
+                    if (!fstClick) {
+                        fstClick = toggleHeight(info[index], fstClick, heightInfo);
+                        toggleWidth(buyBtns[index], !fstClick, $(buyBtns[index]).parent().width() / 2);
+                        toggleWidth(discript[index], !fstClick, $(discript[index]).parent().width() * 3 / 4);
+                    }
+                    index = prevGame(games, index);
+                    display(games, index);
+                    changeBackGround(imgs, index);
+                });
+                for (let i = 0; i < games.length; ++i) {
+                    $(games[i]).click(function () {
+                        fstClick = toggleHeight(info[i], fstClick, heightInfo);
+                        toggleWidth(buyBtns[index], !fstClick, $(buyBtns[index]).parent().width() / 2);
+                        toggleWidth(discript[index], !fstClick, $(discript[index]).parent().width() * 3 / 4);
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
