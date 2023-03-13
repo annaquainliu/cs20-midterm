@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Nintendo Catalog | Not PlayStation</title>
+        <title>Game Store | Nintendo</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="catalog_nintendo.css">
         <script src="home.js"></script>
         <script src="game_store.js"></script>
@@ -10,42 +13,43 @@
     <body>
         <div id="page">
             <div id="navbar">
-                <div id="logo" onclick="window.location.href='index.html'"></div>
-                <div class="dropdown">
-                    <div class="category">CATALOGS</div>
-                    <div class="dropdown-content category" onclick="window.location.href='catalog_nintendo.html';">NINTENDO</div>
-                    <div class="dropdown-content category" onclick="window.location.href='game_store.html';">NON-NINTENDO</div>
+                <div id="logo" onclick="window.location.href='index.html'">logo</div>
+                    <div class="category">CONTACTS</div>
+                    <div class="dropdown">
+                        <div class="category">CATALOGS</div>
+                        <div class="dropdown-content category" onclick="window.location.href='catalog_nintendo.html';">NINTENDO</div>
+                        <div class="dropdown-content category" onclick="window.location.href='game_store.html';">NON-NINTENDO</div>
+                    </div>
+                    <div class="category" onclick="window.location.href='faq.html';">FAQ</div>
+                    <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
+                    <div class="category" onclick="window.location.href='checkout.html';">CHECKOUT</div>
+                    <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
                 </div>
-                <div class="category" onclick="window.location.href='faq.html';">FAQ</div>
-                <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
-                <div class="category" onclick="window.location.href='checkout.html';">CHECKOUT</div>
-                <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
-            </div>
                 <h1>Shop Nintendo games!</h1>
                 <div id="gameSlider">
-                    <div class="slide" id="ac" style="background-image: url('images/ac.png'); background-color: rgba(255, 255, 255, 0.45); display: block;"></div>
-                    <div class="slide" id="mc" style="background-image: url('images/mc.png'); background-color: rgba(9, 61, 165, 0.583);"></div>
-                    <div class="slide" id="mhr" style="background-image: url('images/mhr.png'); background-color: rgba(255, 0, 0, 0.45);"></div>
-                    <div class="slide" id="fe" style="background-image: url('images/fe.png'); background-color: rgba(33, 225, 19, 0.615);"></div>
-
+                    <div class="slide" id="ac" style="background-image: url('images/ac.png'); background-color: #19AD5E; display: block;"></div>
+                    <div class="slide" id="mc" style="background-image: url('images/mc.png'); background-color: #834f2f;"></div>
+                    <div class="slide" id="mhr" style="background-image: url('images/mhr.png'); background-color: #4D6FCC;"></div>
+                    <div class="slide" id="fe" style="background-image: url('images/fe.png'); background-color: #8A7ED3;"></div>
+        
                     <a id="next">&#10095;</a>
                     <a id="prev">&#10094;</a>
                 </div>
                 <div id="gameInfo">
-                    <div class="game" style="background-color: rgba(255, 255, 255, 0.45);">
-                        <div class="discription">say something about the game</div>
+                    <div class="game" style="background-color: #19AD5E;">
+                        <div class="discription">Our newest Animal Crossing game, which has over 3000x as many triangles per 3D model but less than half of the content of the previous game! The rest of the content will be released in a paid DLC that costs as much as the base game did.</div>
                         <div class="buy">BUY</div>
                     </div>
-                    <div class="game" style="background-color: rgba(9, 61, 165, 0.583);">
-                        <div class="discription">say something about the game</div>
+                    <div class="game" style="background-color: #834f2f;">
+                        <div class="discription">Everyone knows Minecraft! Set up a server to get killed by your friends in increasingly rage-inducing ways, or enjoy a calm night of any singleplayer mode. Refunds not available if you break your cartridge after a creeper blows up your house.</div>
                         <div class="buy">BUY</div>
                     </div>
-                    <div class="game" style="background-color: rgba(255, 0, 0, 0.45);">
-                        <div class="discription">say something about the game</div>
+                    <div class="game" style="background-color: #4D6FCC;">
+                        <div class="discription">Welcome to Grinding and Bad Online Multiplayer Simulator 2022, where you'll spend 90% of your playtime repeatedly hunting the same monster for a 1% drop. Even though our DLC is expensive, at least we're still releasing awesome variants of old monsters every month!</div>
                         <div class="buy">BUY</div>
                     </div>
-                    <div class="game" style="background-color: rgba(33, 225, 19, 0.615);">
-                        <div class="discription">say something about the game</div>
+                    <div class="game" style="background-color: #8A7ED3;">
+                        <div class="discription">Ever wanted to play a dating sim without the stigma? Buy Fire Emblem and brag to your friends about your tactical genius as you play a combination chess-dating-sim game.</div>
                         <div class="buy">BUY</div>
                     </div>
                 </div>
@@ -86,11 +90,30 @@
                     display(games, index);
                     changeBackGround(imgs, index);
                 });
+                $(window).resize(function () {
+                    if (!fstClick) {
+                        changeWidth(buyBtns[index], $(buyBtns[index]).parent().width() / 2);
+                        changeWidth(discript[index], $(discript[index]).parent().width() * 3 / 4);
+                    }
+                });
                 for (let i = 0; i < games.length; ++i) {
                     $(games[i]).click(function () {
                         fstClick = toggleHeight(info[i], fstClick, heightInfo);
                         toggleWidth(buyBtns[index], !fstClick, $(buyBtns[index]).parent().width() / 2);
                         toggleWidth(discript[index], !fstClick, $(discript[index]).parent().width() * 3 / 4);
+                    });
+                }
+                for (let j = 0; j < buyBtns.length; ++j) {
+                    $(buyBtns[j]).mouseenter(function () {
+                        changeWidth(buyBtns[j], $(buyBtns[j]).parent().width() * 3 / 4);
+                    });
+
+                    $(buyBtns[j]).mouseleave(function () {
+                        changeWidth(buyBtns[j], $(buyBtns[j]).parent().width() / 2);
+                    });
+
+                    $(buyBtns[j]).click(function () {
+                        window.open(`checkout.html?game=${games[j].id}`,"_self");
                     });
                 }
             });
