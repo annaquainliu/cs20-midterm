@@ -13,15 +13,16 @@
 <body>
     <div id="page">
         <div id="navbar">
-            <div id="logo" onclick="window.location.href='index.html'">logo</div>
-            <div class="category">CONTACTS</div>
+            <div id="logo" onclick="window.location.href='index.html'"></div>
+            <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
             <div class="dropdown">
                 <div class="category">CATALOGS</div>
-                <div class="dropdown-content category" value="Nintendo">NINTENDO</div>
-                <div class="dropdown-content category" value="Blizzard">BLIZZARD</div>
+                <div class="dropdown-content category">NINTENDO</div>
+                <div class="dropdown-content category" onclick="window.location.href='game_store.html';">NON-NINTENDO</div>
             </div>
-            <div class="category">FAQ</div>
+            <div class="category" onclick="window.location.href='faq.html';">FAQ</div>
             <div class="category" onclick="window.location.href='forum.html';">FORUM</div>
+            <div class="category" onclick="window.location.href='checkout.html';">CHECKOUT</div>
         </div>
         <div id="homePage" style="margin-bottom: 1px;">
             <h1 style="margin-top: 10vh;">Frequently Asked Questions</h1>
@@ -84,6 +85,6 @@
     </div>
     <div id="background"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="home.js"></script>
+    <!-- <script src="home.js"></script> -->
 </body>
 </html>
