@@ -36,7 +36,11 @@
     border-radius: 4vw;
     position: relative;
     color: white;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
+}
+
+.comment:hover {
+    width: 65%;
 }
 .userinfo {
     display: table;
@@ -163,6 +167,14 @@
     font-size: 2vw;
 }
 
+#sort {
+    width: 60%; 
+    margin-bottom: 3vh; 
+    margin-top: 3vh;
+    border-radius: 1vw;
+    text-align: left;
+}
+
 </style>
 <body>
     <div id="forumBackground">
@@ -179,9 +191,9 @@
         </div>
         <div id="forum">
             <h1>FORUM</h1>
-            <p style="letter-spacing: 0vw; color: white;">Comment your feedback!</p>
+            <h2>Comment your feedback!</h2>
             <div id="comments">
-                <h2 style="text-align: left; width: 60%; margin-bottom: 3vh;">Most relevant</h2>
+                <h2 id="sort">Most Relevant</h2>
                 <div class="comment">
                     <div class="userinfo">
                         <div class="pfp" id="pfp1"></div>
