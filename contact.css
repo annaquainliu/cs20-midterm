@@ -180,7 +180,6 @@ p.title {
     padding-bottom: 0.5vw;
     text-align: center;
     font-weight: bold;
-    font-size: 1.5vw
 }
 
 p.subtitle {
@@ -215,6 +214,34 @@ button {
 @media only screen and (max-device-width: 500px)  {
     .category {
         font-size: 2vw;
+    }
+    #homePage h1 {
+        font-size: 8vw;
+    }
+    #homePage h2 {
+        font-size: 4vw;
+    }
+    p {
+        font-size: 3vw;
+    }
+    form p.title {
+        font-size: 4vw;
+    }
+    form p.subtitle, .rating form p, form p.bottomtext, #suvmittext, button {
+        font-size: 2.5vw;
+    }
+
+    button {
+        margin-bottom: 1vh;
+    }
+    form p.bottomtext {
+        padding-bottom: 2vw;
+    }
+    .rating {
+        width: 70vw;
+        margin: auto;
+        display: table;
+        margin-top: 10vh;
     }
 }
 
