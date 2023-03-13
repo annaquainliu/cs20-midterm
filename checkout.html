@@ -29,7 +29,7 @@
         font-weight: 400;
         margin: auto;
         margin-bottom: 3vw;
-        width: 40vw;
+        width: 60vw;
     }
     h2 {
         color: rgb(205, 113, 172);
@@ -42,11 +42,19 @@
         text-align: center;
     }
     table tr th, table tr td {
-        width: 10vw;
+        width: 15vw;
     }
     table tr th {
         color: white;
         background-color: rgb(205, 113, 172);
+        border-radius: 1vw;
+    }
+    button {
+        background-color: rgb(205, 113, 172);
+        width: 7vw;
+        color: white;
+        border: 0;
+        font-size: 1.2vw;
         border-radius: 1vw;
     }
     
@@ -103,6 +111,27 @@
                 <td>0</td>
                 <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
             </tr>  
+            <tr id="animalCrossing">
+                <td>Animal Crossing</td>
+                <td>New Horizons</td>
+                <td>$35</td>
+                <td>0</td>
+                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
+            </tr>  
+            <tr id="monsterHunter2">
+                <td>Monster Hunter</td>
+                <td>Rise</td>
+                <td>$35</td>
+                <td>0</td>
+                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
+            </tr>  
+            <tr id="fireEmblem">
+                <td>Fire Emblem</td>
+                <td>Three Horses</td>
+                <td>$35</td>
+                <td>0</td>
+                <td class="quantity"><span>+</span>&nbsp;<span>-</span></td>
+            </tr>  
             <tr>
                 <td>Total: </td>
                 <td>&nbsp;</td>
@@ -111,6 +140,8 @@
                 <td id="totalPrice">$0</td>
             </tr>
         </table>
+        <button>Purchase!</button>
     </div>
+    <script src="checkout.js"></script>
 </body>
 </html>
