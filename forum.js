@@ -25,6 +25,7 @@ window.onload = () => {
     const comment = document.getElementById('makeComment').querySelector('textarea');
     const username = document.querySelector("input[class='username']");
     const comments = document.getElementById('comments');
+    const multiLineinput = document.getElementById('multiLine').children[0];
     const topComment = comments.children;
 
     submitComment.addEventListener('click', () => {
@@ -36,13 +37,14 @@ window.onload = () => {
         }
         else {
             $('#posted').text('Posted!');
-            makeComment(comment.value, username.value);
+
+            makeComment(comment.value, username.value, multiLineinput.checked);
         }
         $('#posted').animate({opacity: '100%'}, 200)
                         .animate({opacity: '0%'}, 2000);
     });
 
-    function makeComment(comment, username) {
+    function makeComment(comment, username, checked) {
         let components = {'comment': null, 'userinfo': null, 'yourPfp pfp': null, 'username': null, 'time': null,
                             'commentText': null, 'likes': null, 'heart': null};
         let likesVal = document.createElement('span');
@@ -58,6 +60,11 @@ window.onload = () => {
             }
             else if (className == 'commentText') {
                 componentDiv.innerText = comment;
+                if (checked) {
+                    componentDiv.style.columnCount = 2;
+                    componentDiv.style.columnRuleStyle = 'solid';
+                    componentDiv.style.columnRuleWidth = '0.2vw';
+                }
             }
             else if (className == 'likes') {
                 componentDiv.setAttribute('liked', false);

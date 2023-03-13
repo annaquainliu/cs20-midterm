@@ -143,6 +143,17 @@
     color: white;
 }
 
+#multiLine {
+    position: absolute;
+    bottom: 2vh;
+    left: 5vw;
+    color:rgb(51, 64, 103);
+}
+
+#multiLine input {
+    margin-right: 0.5vw;
+}
+
 .yourPfp {
     background-color: rgba(225, 234, 241, 0);
     background-image: linear-gradient( yellow, rgb(224, 101, 122));
@@ -179,8 +190,6 @@
     border-radius: 1vw;
     text-align: left;
 }
-
-
 </style>
 <body>
     <div id="forumBackground">
@@ -198,7 +207,7 @@
         </div>
         <div id="forum">
             <h1>FORUM</h1>
-            <h2>Comment your feedback!</h2>
+           <h2>Comment your feedback!</h2>
             <div id="comments">
                 <h2 id="sort">Most Relevant</h2>
                 <div class="comment">
@@ -278,8 +287,8 @@
                         <div class="username">Column User</div>
                         <div class="time">03/13/23 at 2:30 AM</div>
                     </div>
-                    <div class="commentText" style="column-count: 2; column-rule: solid 1px rgb(21, 32, 66);">
-                        Hey check it out guys I can write in columns I'm so cool. I'm definitly not writting in colums because I ran out of ideas for how to shoehorn a muti column element into my website. Don't give me that look this is how I talk and write in real life.
+                    <div class="commentText" style="column-count: 2; column-rule: solid 0.2vw">
+                        Hey check it out guys I can write in columns I'm so cool. I'm definitely not writting in colums because I ran out of ideas for how to shoehorn a muti column element into my website. Don't give me that look this is how I talk and write in real life.
                     </div>
                     <div class="likes" liked=false>
                         <div class="heart"></div>
@@ -293,6 +302,7 @@
                     <input class="username" placeholder='Username' style="text-align: center;"></input>
                 </div>
                 <textarea rows='10' placeholder="Write a comment"></textarea>
+                <div id="multiLine"><input type="checkbox">Multi-line</div>
                 <div id="posted">Posted!</div>
                 <button id="submitComment">Comment</button>
             </div>
