@@ -82,30 +82,31 @@ body {
     align-items: center;
 }
 
-.dropdown {
+#dropdown {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-  
-.dropdown-content {
-    display: none;
-    z-index: 1;
 }
 
-.dropdown:hover {
+#dropdown:hover #options {
     display: flex;
-    height: fit-content;
-    background-color: rgb(23, 23, 59);
-    border-radius: 1.5vw;
-    border: rgb(96, 96, 172) solid 1px;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+#options {
+    position: absolute;
+    width: inherit;
+    bottom: -10vh;
+    display: none;
+    flex-direction: column;
+    height: 10vh;
 }
 
-.category:hover {
+#options .category {
+    height: 5vh;
+    background-color: rgb(2, 2, 33);
+}
+
+
+.category:hover, #options .category:hover {
     background-color: rgba(255, 151, 217, 0.31);
 }
 
