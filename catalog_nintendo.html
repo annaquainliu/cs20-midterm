@@ -6,7 +6,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="catalog_nintendo.css">
-        <script src="home.js"></script>
         <script src="game_store.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
@@ -24,32 +23,44 @@
                     <div class="category" onclick="window.location.href='checkout.html';">CHECKOUT</div>
                     <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
                 </div>
-                <h1>Shop Nintendo games!</h1>
+                <h1 id="title">Shop Nintendo games!</h1>
                 <div id="gameSlider">
-                    <div class="slide" id="ac" style="background-image: url('images/ac.png'); background-color: #19AD5E; display: block;"></div>
-                    <div class="slide" id="mc" style="background-image: url('images/mc.png'); background-color: #834f2f;"></div>
-                    <div class="slide" id="mhr" style="background-image: url('images/mhr.png'); background-color: #4D6FCC;"></div>
-                    <div class="slide" id="fe" style="background-image: url('images/fe.png'); background-color: #8A7ED3;"></div>
+                    <div class="slide" id="animalCrossing" style="background-image: url('images/ac.png'); background-color: rgba(25, 173, 94, 0.712); display: block;"></div>
+                    <div class="slide" id="minecraft" style="background-image: url('images/mc.png'); background-color: rgba(131, 79, 47, 0.811);"></div>
+                    <div class="slide" id="monsterHunter2" style="background-image: url('images/mhr.png'); background-color: #4d6fccbf;"></div>
+                    <div class="slide" id="fireEmblem" style="background-image: url('images/fe.png'); background-color: #897ed3cb;"></div>
         
                     <a id="next">&#10095;</a>
                     <a id="prev">&#10094;</a>
                 </div>
                 <div id="gameInfo">
-                    <div class="game" style="background-color: #19AD5E;">
-                        <div class="discription">Our newest Animal Crossing game, which has over 3000x as many triangles per 3D model but less than half of the content of the previous game! The rest of the content will be released in a paid DLC that costs as much as the base game did.</div>
-                        <div class="buy">BUY</div>
+                    <div class="game" style="background-color: rgba(25, 173, 94, 0.712);">
+                        <div class="discription">
+                            <h2 style="color: rgb(138, 251, 174);">Animal Crossing: New Horizons</h2>
+                            <p style="color: rgb(138, 251, 174);">Our newest Animal Crossing game, which has over 3000x as many triangles per 3D model but less than half of the content of the previous game! The rest of the content will be released in a paid DLC that costs as much as the base game did.</p>
+                        </div>
+                        <div class="buy" style="color: rgb(138, 251, 174)"><b>BUY</b></div>
                     </div>
-                    <div class="game" style="background-color: #834f2f;">
-                        <div class="discription">Everyone knows Minecraft! Set up a server to get killed by your friends in increasingly rage-inducing ways, or enjoy a calm night of any singleplayer mode. Refunds not available if you break your cartridge after a creeper blows up your house.</div>
-                        <div class="buy">BUY</div>
+                    <div class="game" style="background-color: rgba(131, 79, 47, 0.811);">
+                        <div class="discription">
+                            <h2 style="color: rgb(222, 169, 141);">Minecraft (Nintendo Switch version)</h2>
+                            <p style="color: rgb(222, 169, 141);">Everyone knows Minecraft! Set up a server to get killed by your friends in increasingly rage-inducing ways, or enjoy a calm night of any singleplayer mode. Refunds not available if you break your cartridge after a creeper blows up your house.</p>
+                        </div>
+                        <div class="buy" style="color: rgb(222, 169, 141);"><b>BUY</b></div>
                     </div>
-                    <div class="game" style="background-color: #4D6FCC;">
-                        <div class="discription">Welcome to Grinding and Bad Online Multiplayer Simulator 2022, where you'll spend 90% of your playtime repeatedly hunting the same monster for a 1% drop. Even though our DLC is expensive, at least we're still releasing awesome variants of old monsters every month!</div>
-                        <div class="buy">BUY</div>
+                    <div class="game" style="background-color: #4d6fccbf;">
+                        <div class="discription">
+                            <h2 style="color: rgb(158, 150, 223);">Monster Hunter: Rise (Sunbreak DLC not included)</h2>
+                            <p style="color: rgb(158, 150, 223);">Welcome to Grinding and Bad Online Multiplayer Simulator 2022, where you'll spend 90% of your playtime repeatedly hunting the same monster for a 1% drop. Even though our DLC is expensive, at least we're still releasing awesome variants of old monsters every month!</p>
+                        </div>
+                        <div class="buy" style="color: rgb(158, 150, 223);"><b>BUY</b></div>
                     </div>
-                    <div class="game" style="background-color: #8A7ED3;">
-                        <div class="discription">Ever wanted to play a dating sim without the stigma? Buy Fire Emblem and brag to your friends about your tactical genius as you play a combination chess-dating-sim game.</div>
-                        <div class="buy">BUY</div>
+                    <div class="game" style="background-color: #897ed3cb;">
+                        <div class="discription">
+                            <h2 style="color: rgb(63, 10, 128);">Fire Emblem: Three Houses</h2>
+                            <p style="color: rgb(63, 10, 128);">Ever wanted to play a dating sim without the stigma? Buy Fire Emblem and brag to your friends about your tactical genius as you play a combination chess-dating-sim game.</p>
+                        </div>
+                        <div class="buy" style="color: rgb(63, 10, 128);"><b>BUY</b></div>
                     </div>
                 </div>
             </div>
@@ -57,17 +68,19 @@
         </div>
         <script>
             $(document).ready(function () {
+                hideTitle($('#title'));
                 var heightInfo = '35vh'
-                const imgs = ["ac.png", "mc.png", "mhr.png", "fe.png"];
+                const imgs = ["acbg.png", "mcbg.png", "mhrbg.png", "febg.png"];
                 var index = 0;
                 var fstClick = true;
 
                 var games = document.getElementsByClassName('slide');
-                console.log(games);
                 var info = document.getElementsByClassName('game');
                 
                 var buyBtns = document.getElementsByClassName('buy');
                 var discript = document.getElementsByClassName('discription');
+                
+                $('#background').css('background-image', `url('images/acbg.png')`);
 
                 $("#next").click(function () {
                     if (!fstClick) {
@@ -117,5 +130,6 @@
                 }
             });
         </script>
+        <div id="background"></div>
     </body>
 </html>

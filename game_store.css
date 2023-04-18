@@ -47,6 +47,7 @@
 
 #background {
     background-image: url('images/owbg.jpg');
+    height: 130vh;
 }
 
 .game {
