@@ -105,8 +105,11 @@ body {
     background-color: rgb(2, 2, 33);
 }
 
+#options .category:hover {
+    background-color: rgba(78,49,94,255);
+}
 
-.category:hover, #options .category:hover {
+.category:hover {
     background-color: rgba(255, 151, 217, 0.31);
 }
 
