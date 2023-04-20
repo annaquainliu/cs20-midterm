@@ -1,9 +1,3 @@
-const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://annaquainliu:percabethstash@cluster0.jwpq9y7.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri);
-const dbName = 'stock_ticker_app';
-const collectionName = 'companies';
-
 window.onload = () => {
     const likes = document.getElementsByClassName('likes');
     Array.prototype.forEach.call(likes, like => {
@@ -103,7 +97,7 @@ window.onload = () => {
             //noon special case
             if (hours == 12) {
                 time = "12:" + minutes + " PM";
-            }
+            } // midnight
             else if (hours == 0) {
                 time = "12:" + minutes + " AM";
             }
