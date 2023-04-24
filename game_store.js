@@ -66,3 +66,8 @@ function hideTitle (title) {
     $(title).delay(800).hide(0);
 }
 
+function toggleShade (shade, opacS, game, opacG) {
+    $(shade).animate({opacity: opacS}, {duration: 200, queue: false});
+    $(game).animate({opacity: opacG}, {duration: 200, queue: false});
+}
+

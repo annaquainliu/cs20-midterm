@@ -27,9 +27,19 @@
         <h1 id="title">Shop Other Games!</h1>
         <div id="gameSlider">
             <div class="slide" id="overwatch" style="background-image: url('images/OW3.png'); background-color: rgba(255, 255, 255, 0.45); display: block;"></div>
+            <div class="buy"><b>BUY</b></div>
+
             <div class="slide" id="monsterHunter" style="background-image: url('images/monster_hunter_resize.png'); background-size: 50%, 50%; background-color: rgba(9, 61, 165, 0.583);"></div>
+            <div class="buy"><b>BUY</b></div>
+
             <div class="slide" id="apexLegends" style="background-image: url('images/apex.png'); background-color: rgba(255, 0, 0, 0.45);"></div>
+            <div class="buy"><b>BUY</b></div>
+
             <div class="slide" id="cod" style="background-image: url('images/cod.png'); background-color: rgba(33, 225, 19, 0.615);"></div>
+            <div class="buy"><b>BUY</b></div>
+
+            <div class="shade"> </div>
+
 
             <a id="next">&#10095;</a>
             <a id="prev">&#10094;</a>
@@ -40,7 +50,7 @@
                     <h2 style="color: rgb(58, 67, 66);">Overwatch 3</h2>
                     <p style="color: rgb(58, 67, 66);">Our CEO wants to make a few extra bucks before he gets fired by Microsoft, so here we are with a brand new sequel to the sequel of the world's most popular shooter, featuring 4 vs 4 gameplay and micro-transactions so expensive that even a CS:GO player would hesitate before making a purchase. Just buy it. BUY IT, IT'S FUN! No just kidding it's not. And you don't have to buy it because we work for Microsoft now and money is the last thing we care about. </p>
                 </div>
-                <div class="buy" style="color: rgba(255, 192, 2, 0.897); background-color: rgba(58, 67, 66, 0.727);"><b>BUY</b></div>
+                <!-- <div class="buy" style="color: rgba(255, 192, 2, 0.897); background-color: rgba(58, 67, 66, 0.727);"><b>BUY</b></div> -->
             </div>
             <div class="game" style="background-color: rgba(9, 61, 165, 0.583);">
                 <div class="discription">
@@ -48,7 +58,7 @@
                     <p style="color: rgba(171, 156, 22, 0.871);">Definitly a real name for the next Monster Hunter game and not something I heard from a random post on reddit. At Capcom, we believe in sustainability and saving the enviroment. Which is why we release Monster Hunter in the most bare-bone state possible and make tiny updates to the game every few months eventhough we already finished everything at the time of release...</p>
                     <p style="color: rgba(255, 255, 255, 0.871);">We will update the rest of this game description in April in the form of a paid DLC.</p>
                 </div>
-                <div class="buy" style="color: white; background-color: rgba(23, 25, 24, 0.727);"><b>BUY</b></div>
+                <!-- <div class="buy" style="color: white; background-color: rgba(23, 25, 24, 0.727);"><b>BUY</b></div> -->
             </div>
             <div class="game" style="background-color: rgba(255, 0, 0, 0.45);">
                 <div class="discription">  
@@ -57,14 +67,14 @@
                     <p style="color: rgba(255, 255, 255, 0.871);">But this purchase link is working just fine, because we like your money!</p>
                     
                 </div>
-                <div class="buy" style="color: white; background-color: rgba(82, 10, 10, 0.727);"><b>BUY</b></div>
+                <!-- <div class="buy" style="color: white; background-color: rgba(82, 10, 10, 0.727);"><b>BUY</b></div> -->
             </div>
             <div class="game" style="background-color: rgba(33, 225, 19, 0.615);">
                 <div class="discription">
                     <h2 style="color: rgba(0, 0, 0, 0.976);">Call of Duty</h2>
                     <p style="color: rgba(0, 0, 0, 0.976); ">Newest Call of Duty game! Comming this summer holiday on Xbox! Not on Playstation. Also comming to PC. Still not on Playstation. Supports Steam Deck! But not Playstation. Runs on a Mac! Definitly can't run on a Playstation. 60fps on your grandparents' CRT! 0 fps on Playstation. Oh and also not on Switch, but we don't talk about those.</p>
                 </div>
-                <div class="buy" style="color: rgba(0, 0, 0, 0.976); background-color: rgba(144, 215, 142, 0.727);"><b>BUY</b></div>
+                <!-- <div class="buy" style="color: rgba(0, 0, 0, 0.976); background-color: rgba(144, 215, 142, 0.727);"><b>BUY</b></div> -->
             </div>
         </div>
     </div>
@@ -81,11 +91,13 @@
             var fstClick = true;
             var buyBtns = document.getElementsByClassName('buy');
             var discript = document.getElementsByClassName('discription');
+            var shade = document.querySelector('.shade');
             $("#next").click(function () {
                 if (!fstClick) {
                     fstClick = toggleHeight(info[index], fstClick, heightInfo);
                     toggleWidth(buyBtns[index], !fstClick, $(buyBtns[index]).parent().width() / 2);
                     toggleWidth(discript[index], !fstClick, $(discript[index]).parent().width() * 3 / 4);
+                    toggleShade(shade, '0%', games[index], '100%');
                 }
                 index = nextGame(games, index);
                 display(games, index);
@@ -96,6 +108,7 @@
                     fstClick = toggleHeight(info[index], fstClick, heightInfo);
                     toggleWidth(buyBtns[index], !fstClick, $(buyBtns[index]).parent().width() / 2);
                     toggleWidth(discript[index], !fstClick, $(discript[index]).parent().width() * 3 / 4);
+                    toggleShade(shade, '0%', games[index], '100%');
                 }
                 index = prevGame(games, index);
                 display(games, index);
@@ -109,6 +122,11 @@
             });
             for (let i = 0; i < games.length; ++i) {
                 $(games[i]).click(function () {
+                    if (fstClick) {
+                        toggleShade(shade, '70%', games[i], '30%');
+                    } else {
+                        toggleShade(shade, '0%', games[i], '100%');
+                    }
                     fstClick = toggleHeight(info[i], fstClick, heightInfo);
                     toggleWidth(buyBtns[index], !fstClick, $(buyBtns[index]).parent().width() / 2);
                     toggleWidth(discript[index], !fstClick, $(discript[index]).parent().width() * 3 / 4);
