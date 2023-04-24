@@ -43,6 +43,10 @@
     }
     table tr th, table tr td {
         width: 15vw;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        padding-left: 1vw;
+        padding-right: 1vw;
     }
     table tr th {
         color: white;
@@ -53,12 +57,12 @@
         background-color: rgb(205, 113, 172);
         color: white;
         border: 0;
-        font-size: 1.2vw;
-        border-radius: 1vw;
-        padding: 0.5vw;
+        font-size: 1.8vw;
+        border-radius: 2vw;
+        padding: 1vw;
     }
 
-    .title, span {
+    .title, table span {
        font-weight: 800;
        color: white;
     }
@@ -83,8 +87,7 @@
         }
         button {
             font-size: 3vw;
-            width: 15vw;
-            height: 4vw;
+            padding: 2vw;
         }
     }
     
@@ -92,10 +95,12 @@
 <body>
     <div id="navbar">
         <div id="logo" onclick="window.location.href='index.html'"></div>
-        <div class="dropdown">
-            <div class="category">CATALOGS</div>
-            <div class="dropdown-content category" onclick="window.location.href='catalog_nintendo.html';">NINTENDO</div>
-            <div class="dropdown-content category" onclick="window.location.href='game_store.html';">NON-NINTENDO</div>
+        <div class="category" id="dropdown">
+            CATALOGS
+            <div id="options">
+                <span class="category" onclick="window.location.href='catalog_nintendo.html'">Nintendo</span>
+                <span class="category" onclick="window.location.href='game_store.html'">Non-Nintendo</span>
+            </div>
         </div>
         <div class="category" onclick="window.location.href='faq.html';">FAQ</div>
         <div class="category" onclick="window.location.href='forum.html';">FORUM</div>

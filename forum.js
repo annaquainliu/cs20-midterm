@@ -97,7 +97,7 @@ window.onload = () => {
             //noon special case
             if (hours == 12) {
                 time = "12:" + minutes + " PM";
-            }
+            } // midnight
             else if (hours == 0) {
                 time = "12:" + minutes + " AM";
             }
