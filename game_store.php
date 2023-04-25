@@ -9,6 +9,27 @@
     <title>Game Store | Non-Nintendo</title>
     <script src="game_store.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <?php
+
+        function gameSlide ($id, $file, $color) {
+            $path = "images/$file";
+            return "<div class='slide' id='$id' style='background-image: url(\"$path\"); background-color: $color;'></div>";
+        }
+        
+        function buyIcon () {
+            return "<div class='buy'><b>BUY</b></div>";
+        }
+
+        function description ($title, $text, $titleColor, $textColor) {
+            $fp = "descriptions/$text";
+            $content = file_get_contents($fp);
+            return "<div class='discription'>" .
+                   "<h2 style='color: $titleColor;'>$title</h2>" .
+                   "<p style='color: $textColor;'>" . nl2br($content) . "</p>" .
+                   "</div>";
+        }
+
+        ?>
 </head>
 <body>
     <div id="page">
@@ -27,58 +48,71 @@
             <div class="category" onclick="window.location.href='contact.html'">CONTACTS</div>
         </div>
         <h1 id="title">Shop Other Games!</h1>
-        <div id="gameSlider">
-            <div class="slide" id="overwatch" style="background-image: url('images/OW3.png'); background-color: rgba(255, 255, 255, 0.45); display: block;"></div>
-            <div class="buy"><b>BUY</b></div>
+        <?php
 
-            <div class="slide" id="monsterHunter" style="background-image: url('images/monster_hunter_resize.png'); background-color: rgba(9, 61, 165, 0.583);"></div>
-            <div class="buy"><b>BUY</b></div>
-
-            <div class="slide" id="apexLegends" style="background-image: url('images/apex.png'); background-color: rgba(255, 0, 0, 0.45);"></div>
-            <div class="buy"><b>BUY</b></div>
-
-            <div class="slide" id="cod" style="background-image: url('images/cod.png'); background-color: rgba(33, 225, 19, 0.615);"></div>
-            <div class="buy"><b>BUY</b></div>
-
-            <div class="shade"> </div>
-
-
-            <a id="next">&#10095;</a>
-            <a id="prev">&#10094;</a>
-        </div>
-        <div id="gameInfo">
-            <div class="game" style="background-color: rgba(255, 255, 255, 0.45);">
-                <div class="discription">
-                    <h2 style="color: rgb(58, 67, 66);">Overwatch 3</h2>
-                    <p style="color: rgb(58, 67, 66);">Our CEO wants to make a few extra bucks before he gets fired by Microsoft, so here we are with a brand new sequel to the sequel of the world's most popular shooter, featuring 4 vs 4 gameplay and micro-transactions so expensive that even a CS:GO player would hesitate before making a purchase. Just buy it. BUY IT, IT'S FUN! No just kidding it's not. And you don't have to buy it because we work for Microsoft now and money is the last thing we care about. </p>
-                </div>
-                <!-- <div class="buy" style="color: rgba(255, 192, 2, 0.897); background-color: rgba(58, 67, 66, 0.727);"><b>BUY</b></div> -->
-            </div>
-            <div class="game" style="background-color: rgba(9, 61, 165, 0.583);">
-                <div class="discription">
-                    <h2 style="color: rgba(255, 255, 255, 0.871);">Monster Hunter Paradise</h2>
-                    <p style="color: rgba(171, 156, 22, 0.871);">Definitly a real name for the next Monster Hunter game and not something I heard from a random post on reddit. At Capcom, we believe in sustainability and saving the enviroment. Which is why we release Monster Hunter in the most bare-bone state possible and make tiny updates to the game every few months eventhough we already finished everything at the time of release...</p>
-                    <p style="color: rgba(255, 255, 255, 0.871);">We will update the rest of this game description in April in the form of a paid DLC.</p>
-                </div>
-                <!-- <div class="buy" style="color: white; background-color: rgba(23, 25, 24, 0.727);"><b>BUY</b></div> -->
-            </div>
-            <div class="game" style="background-color: rgba(255, 0, 0, 0.45);">
-                <div class="discription">  
-                    <h2 style="color: rgba(255, 255, 255, 0.871);">ERROR</h2>
-                    <p style="color: rgba(255, 255, 255, 0.871);">CONNECTION TIME OUT[code: oUrSERverSuCKs]</p><br><br><br>
-                    <p style="color: rgba(255, 255, 255, 0.871);">But this purchase link is working just fine, because we like your money!</p>
+            $server = "35.212.97.71";// your server
+            $userid = "unnwyocfg0iz0"; // your user id
+            $pw = "nebsttljblib"; // your pw
+            $db= "dbvacoigyhy1qy"; // your database
                     
-                </div>
-                <!-- <div class="buy" style="color: white; background-color: rgba(82, 10, 10, 0.727);"><b>BUY</b></div> -->
-            </div>
-            <div class="game" style="background-color: rgba(33, 225, 19, 0.615);">
-                <div class="discription">
-                    <h2 style="color: rgba(0, 0, 0, 0.976);">Call of Duty</h2>
-                    <p style="color: rgba(0, 0, 0, 0.976); ">Newest Call of Duty game! Comming this summer holiday on Xbox! Not on Playstation. Also comming to PC. Still not on Playstation. Supports Steam Deck! But not Playstation. Runs on a Mac! Definitly can't run on a Playstation. 60fps on your grandparents' CRT! 0 fps on Playstation. Oh and also not on Switch, but we don't talk about those.</p>
-                </div>
-                <!-- <div class="buy" style="color: rgba(0, 0, 0, 0.976); background-color: rgba(144, 215, 142, 0.727);"><b>BUY</b></div> -->
-            </div>
-        </div>
+            // Create connection
+            $conn = new mysqli($server, $userid, $pw);
+
+            // Check connection
+            if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+                
+            //select the database
+            $conn->select_db($db);
+
+            //run query
+            $sqlSlide = "SELECT gameID, imgFile, gameColor FROM Games";
+            $slides = $conn->query($sqlSlide);
+
+            $sqlInfo = "SELECT gameColor, titleColor, textColor, title, info, pageBg FROM Games";
+            $gameInfos = $conn->query($sqlInfo);
+
+            // print game slides
+            echo "<div id='gameSlider'>";
+
+            if ($slides->num_rows > 0) 
+            {
+                while($game = $slides->fetch_assoc()) 
+                {
+                    echo gameSlide($game['gameID'], $game['imgFile'], $game['gameColor']) . 
+                         buyIcon();
+                }
+            } 
+            else 
+            echo "no slides";
+
+            echo "<div class='shade'> </div>" .
+                 "<a id='next'>&#10095;</a>" .
+                 "<a id='prev'>&#10094;</a>" . 
+                 "</div>";
+
+            // print game description
+            echo "<div id='gameInfo'>";
+
+            if ($gameInfos->num_rows > 0) 
+            {
+                while($info = $gameInfos->fetch_assoc()) 
+                {
+                    $gameColor = $info['gameColor'];
+                    echo "<div class='game' style='background-color: $gameColor;'>" . 
+                         description($info['title'], $info['info'], $info['titleColor'], $info['textColor']) . 
+                         "</div>";
+                }
+            } 
+            else 
+            echo "no descriptions";
+
+            echo "</div>";
+            
+            
+
+            ?>
     </div>
     <script>
         $(document).ready(function () {
@@ -89,6 +123,7 @@
             const imgs = ["owbg.jpg", "mhbg.jpg", "apex.jpg", "cod.jpg"];
             var index = 0;
             var games = document.getElementsByClassName('slide');
+            $(games[0]).css('display', 'block');
             var info = document.getElementsByClassName('game');
             var fstClick = true;
             var buyBtns = document.getElementsByClassName('buy');

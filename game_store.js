@@ -38,9 +38,9 @@ function changeBackGround (images, to) {
 function toggleHeight (elem, fstClick, height) {
     if (fstClick) {
         $(elem).css('display', 'flex');
-        $(elem).animate({opacity: '100%', height: height}, {duration: 200, queue: true})
+        $(elem).animate({opacity: '100%', height: height}, {duration: 200, queue: false})
     } else {
-        $(elem).animate({opacity: "0%", height: '0px'}, {duration: 200, queue: true})
+        $(elem).animate({opacity: "0%", height: '0px'}, {duration: 200, queue: false})
         $(elem).delay(200).hide(0);
     }
     return !fstClick;
@@ -49,9 +49,9 @@ function toggleHeight (elem, fstClick, height) {
 function toggleWidth (elem, fstClick, width) {
     if (fstClick) {
         $(elem).css('display', 'block');
-        $(elem).animate({opacity: '100%', width: width }, {duration: 200, queue: true})
+        $(elem).animate({opacity: '100%', width: width }, {duration: 200, queue: false})
     } else {
-        $(elem).animate({opacity: "0%", width: '0px'}, {duration: 200, queue: true})
+        $(elem).animate({opacity: "0%", width: '0px'}, {duration: 200, queue: false})
         $(elem).delay(200).hide(0);
     }
     return !fstClick;
